@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vefforritun 2 - Verkefni 3</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Velkomin á vefsíðuna!</h1>
+  <form id="questionForm">
+    <input type="text" id="question" placeholder="Spurning" required>
+    <select id="categoryId" required>
+      <option value="" disabled selected>Veldu flokk</option>
+      <!-- Flokkar verða fylltir með JavaScript -->
+    </select>
+    <div id="answers">
+      <div class="answer">
+        <input type="text" placeholder="Svar 1" required>
+        <input type="radio" name="correctAnswer" value="0"> Rétt svar
+      </div>
+      <div class="answer">
+        <input type="text" placeholder="Svar 2" required>
+        <input type="radio" name="correctAnswer" value="1"> Rétt svar
+      </div>
+      <div class="answer">
+        <input type="text" placeholder="Svar 3" required>
+        <input type="radio" name="correctAnswer" value="2"> Rétt svar
+      </div>
+      <div class="answer">
+        <input type="text" placeholder="Svar 4" required>
+        <input type="radio" name="correctAnswer" value="3"> Rétt svar
+      </div>
+    </div>
+    <button type="submit">Búa til spurningu</button>
+  </form>
+
+  <nav>
+    <ul id="categoryLinks">
+      <!-- Flokkar verða fylltir með JavaScript -->
+    </ul>
+  </nav>
+  <div id="content">
+    <!-- Hér verður birt efni flokka og spurninga -->
+  </div>
+  <script src="/app.js"></script>
+  <script src="/app.js"></script> <!-- Staðfestu að þetta sé til staðar -->
+</body>
+</html>
