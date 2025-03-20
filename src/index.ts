@@ -3,8 +3,12 @@ import { serveStatic } from '@hono/node-server/serve-static' // Notaðu node mid
 import categories from '../routes/categories'
 import questions from '../routes/questions'
 import answers from '../routes/answers'
+import { cors } from 'hono/cors';
 
 const app = new Hono()
+
+// Enable CORS
+app.use(cors());
 
 // Þjóna stöðum (static files) úr public möppunni
 app.use('/*', serveStatic({ root: './public' }))

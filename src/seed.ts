@@ -4,14 +4,20 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  // Búa til flokka
-  await prisma.category.createMany({
-    data: [
-      { name: 'JavaScript', slug: 'javascript' },
-      { name: 'HTML', slug: 'html' },
-      { name: 'CSS', slug: 'css' },
-    ],
-  })
+  const categories = [
+    { name: 'JavaScript', slug: 'javascript' },
+    { name: 'HTML', slug: 'html' },
+    { name: 'CSS', slug: 'css' },
+  ]
+
+  for (const category of categories) {
+    await prisma.category.upsert({
+      where: { name: category.name },
+      update: {}, // Ekki þarf að uppfæra neitt
+      create: category,
+    })
+  }
+  console.log('Flokkar búnir til eða uppfærðir.')
 }
 
 main()
